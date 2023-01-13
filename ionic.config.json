@@ -1,0 +1,7 @@
+{
+  "name": "tmdb2",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

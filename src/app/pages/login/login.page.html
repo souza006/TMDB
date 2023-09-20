@@ -1,0 +1,19 @@
+<ion-content [fullscreen]="true">
+  <div class="center">
+    <ion-card color="bordo">
+      <img src="assets/clapperboard.png" alt="Icone de uma Claquete"/>
+      <ion-card-title class="ion-text-center">
+        TMDB
+      </ion-card-title>
+      <ion-item lines="none" color="dark">
+        <ion-label position="floating">Nome de usuario</ion-label>
+        <ion-input type="text" [(ngModel)]="userLogin.username" name="username"></ion-input>
+      </ion-item>
+      <ion-item lines="none" color="dark">
+        <ion-label position="floating">Senha</ion-label>
+        <ion-input type="password" [(ngModel)]="userLogin.password" name="password"></ion-input>
+      </ion-item>
+      <ion-button type="submit" (click)="loginApp()" color="dark" expand="block">Entrar</ion-button>
+    </ion-card>
+  </div>
+</ion-content>

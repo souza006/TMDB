@@ -3,7 +3,19 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production    : false,
+  api_key       : '249d6ab5040f9f9c1e17c36c0c7856c8',
+  request_token : '',
+  endpoint      :{
+    loginURL          :'https://api.themoviedb.org/3/authentication/token/validate_with_login',
+    autenticationURL  : 'https://api.themoviedb.org/3/authentication/token/new',
+    moviesURL         : 'https://api.themoviedb.org/3/movie/top_rated',
+    movieDetails      : 'https://api.themoviedb.org/3/movie/',
+    moviesImagesURL   : 'https://image.tmdb.org/t/p',
+    searchMovieURL    : 'https://api.themoviedb.org/3/search/movie',
+  },
+  language      : 'pt-br',
+  region        : 'BR',
 };
 
 /*

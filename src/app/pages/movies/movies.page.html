@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>Filmes mais bem avaliados</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="bordo">
+  <ion-searchbar (ionChange)="searchMovie($event)" placeholder="Buscar Filme" ></ion-searchbar>
+  <ion-list>
+    <ion-item button *ngFor="let item of movies" [routerLink]="[item.id]" color="bordo" lines="none">
+      <ion-card color="dark">
+        <ion-card-header>
+
+          <img [src]="imagesURL + '/w400' + item.poster_path" />
+
+          <ion-card-title>{{ item.title }}</ion-card-title>
+          <ion-badge color="tertiary">{{ item.vote_average }}</ion-badge>
+          <ion-card-subtitle><small>{{ item.release_date | date:'y' }}</small></ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          {{ item.overview }}
+        </ion-card-content>
+      </ion-card>
+    </ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="loadMoreMovies($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles"
+    loadingText="Carregando mais filmes">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
